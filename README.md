@@ -6,6 +6,7 @@ This is a spring boot application for a personalized data REST API service that 
 The service consists of 2 main parts:
 1. Interface with data team (internal) - Receiving shoppers’ personalized information and product metadata from our data team and storing it in a specified database.
 2. Interface with eCommerce (external) - Provide fast-reading operation for the shoppers’ personalized information.
+![image](https://github.com/thilina999/personalized-data-core/assets/28834233/7c39ba15-a973-4c09-b57a-62b9fe22ec9d)
 
 ## Built With
 
