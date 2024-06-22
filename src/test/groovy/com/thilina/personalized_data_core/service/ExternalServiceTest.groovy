@@ -21,7 +21,7 @@ class ExternalServiceTest extends Specification {
             String category = "Babies"
             String brand = "Babyom"
             int limit = 10
-            Pageable pageable = PageRequest.of(0, limit);
+            Pageable pageable = PageRequest.of(0, limit)
 
             def productMetadata1 = new ProductMetadata(productId: "P1", category: "Babies", brand: "Babyom")
             def productMetadata2 = new ProductMetadata(productId: "P2", category: "Toys", brand: "ToyBrand")
