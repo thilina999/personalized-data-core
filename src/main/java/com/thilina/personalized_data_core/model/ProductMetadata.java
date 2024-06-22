@@ -5,12 +5,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Index;
 import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "product_metadata")
+@Table(name = "product_metadata", indexes = {
+    @Index(name = "idx_product_metadata_category", columnList = "category"),
+    @Index(name = "idx_product_metadata_brand", columnList = "brand")
+})
 public class ProductMetadata {
 
     @Id
