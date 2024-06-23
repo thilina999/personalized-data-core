@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "ef75d005-ee51-4515-9c83-02ef0c0a79b1",
+		"name": "Personalized Data Core",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Internal",
+			"item": [
+				{
+					"name": "Add Product Metadata",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"BB-2144746855\",\n    \"category\": \"Babies\",\n    \"brand\": \"Babyom\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/internal/api/v1/product-metadata",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"internal",
+								"api",
+								"v1",
+								"product-metadata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Shopper Products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"shopperId\": \"S-1000\",\n    \"shelf\": [\n        {\n            \"productId\": \"MB-2093193398\",\n            \"relevancyScore\": 31.089209569320897\n        },\n        {\n            \"productId\": \"BB-2144746855\",\n            \"relevancyScore\": 55.16626010671777\n        },\n        {\n            \"productId\": \"MD-543564697\",\n            \"relevancyScore\": 73.01492966268303\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/internal/api/v1/shopper-products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"internal",
+								"api",
+								"v1",
+								"shopper-products"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "External",
+			"item": [
+				{
+					"name": "Get Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/external/api/v1/products?shopperId=S-1030",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"external",
+								"api",
+								"v1",
+								"products"
+							],
+							"query": [
+								{
+									"key": "shopperId",
+									"value": "S-1030"
+								},
+								{
+									"key": "category",
+									"value": "Books",
+									"disabled": true
+								},
+								{
+									"key": "brand",
+									"value": "BrandH",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "3000",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "!data2024",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "actuator",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

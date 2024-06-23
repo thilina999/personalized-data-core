@@ -6,7 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Index;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Entity
@@ -21,12 +25,21 @@ public class ShopperProduct {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
+    @NotEmpty
     @Column(nullable = false)
     private String shopperId;
 
-    @Column(nullable = false)
+    @NotNull
+    @NotEmpty
+    @Column(name = "product_id", nullable = false)
     private String productId;
 
+    @NotNull
     @Column(nullable = false)
     private Double relevancyScore;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id", referencedColumnName = "product_id", insertable = false, updatable = false)
+    private ProductMetadata productMetadata;
 }

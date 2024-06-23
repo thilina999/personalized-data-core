@@ -1,7 +1,7 @@
 package com.thilina.personalized_data_core.service
 
 import com.thilina.personalized_data_core.dto.ShelfProductDTO
-import com.thilina.personalized_data_core.dto.ShopperProductsDTO
+import com.thilina.personalized_data_core.dto.ShopperShelfDTO
 import com.thilina.personalized_data_core.model.ProductMetadata
 import com.thilina.personalized_data_core.repository.ProductMetadataRepository
 import com.thilina.personalized_data_core.repository.ShopperProductRepository
@@ -35,10 +35,11 @@ class InternalServiceTest extends Specification {
                 new ShelfProductDTO(productId: "P1", relevancyScore: 50.0),
                 new ShelfProductDTO(productId: "P2", relevancyScore: 30.0)
             ]
-            def shopperProductsDTO = new ShopperProductsDTO(shopperId: "S-1000", shelf: shopperProducts)
+            def shopperShelfDTO = new ShopperShelfDTO(shopperId: "S-1000", shelf: shopperProducts)
+            productMetadataRepository.existsByProductId(_ as String) >> true
 
         when:
-            internalService.saveShopperProducts(shopperProductsDTO)
+            internalService.saveShopperProducts(shopperShelfDTO)
 
         then:
             noExceptionThrown()

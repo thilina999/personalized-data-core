@@ -1,5 +1,6 @@
 package com.thilina.personalized_data_core.service
 
+import com.thilina.personalized_data_core.dto.ProductMetadataDTO
 import com.thilina.personalized_data_core.model.ProductMetadata
 import com.thilina.personalized_data_core.repository.ShopperProductRepository
 import org.springframework.data.domain.PageRequest
@@ -29,7 +30,7 @@ class ExternalServiceTest extends Specification {
             shopperProductRepository.findProductsByShopperIdAndFilters(shopperId, category, brand, pageable) >> [productMetadata1]
 
         when:
-            List<ProductMetadata> result = externalService.getProductsByShopper(shopperId, category, brand, limit)
+            List<ProductMetadataDTO> result = externalService.getProductsByShopper(shopperId, category, brand, limit)
 
         then:
             result.size() == 1
