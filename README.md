@@ -97,7 +97,7 @@ Request body
 
 `GET` - [http://localhost:8080/external/api/v1/products?shopperId=S-1000](http://localhost:8080/external/api/v1/products?shopperId=S-1000)
 
-`GET` - [http://localhost:8080/external/api/v1/products?shopperId=S-1000&category=Books&brand=BrandH&limit=3000](http://localhost:8080/external/api/v1/products?shopperId=S-1000&category=Books&brand=BrandH&limit=3000)
+`GET` - [http://localhost:8080/external/api/v1/products?shopperId=S-1000&category=Books&brand=BrandH&limit=30](http://localhost:8080/external/api/v1/products?shopperId=S-1000&category=Books&brand=BrandH&limit=30)
 
 Request Header
 
