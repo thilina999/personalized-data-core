@@ -36,6 +36,82 @@ The service consists of 2 main parts:
     1. Filter by Category & Brand
     2. Limit (default - 10, max - 100)
 
+## Quick start
+### Prerequisites
+
+This assumes that you already have:
+
+- [Gradle](https://gradle.org/install/) installed
+- [Java 17](https://adoptium.net/installation/) installed and configured as the current Java version for the environment.
+  Verify that `java -version` outputs version 17 and ensure that the `JAVA_HOME` environment variable is set to the Java
+  installation directory containing `bin`.
+- [Redis](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/) installed and running
+
+
+### Clone the repository
+
+```
+git clone https://github.com/thilina999/personalized-data-core.git
+```
+
+### Build the project
+Open the project in IntelliJ(or any other IDEA), which will automatically build it
+
+### Run the project
+Run the 'PersonalizedDataCoreApp' class to run the application
+
+## Rest API Endpoints
+
+#### Add Product Metadata
+
+`POST` - [http://localhost:8080/internal/api/v1/product-metadata](http://localhost:8080/internal/api/v1/product-metadata)
+
+Request body
+```application/json
+{
+    "productId": "BB-2144746855",
+    "category": "Babies",
+    "brand": "Babyom"
+}
+```
+
+#### Add Product Metadata
+
+`POST` - [http://localhost:8080/internal/api/v1/product-metadata](http://localhost:8080/internal/api/v1/shopper-products)
+
+Request body
+```application/json
+{
+    "shopperId": "S-1000",
+    "shelf": [
+        {
+            "productId": "BB-2144746855",
+            "relevancyScore": 55.16626010671777
+        }
+    ]
+}
+```
+
+#### Add Product Metadata
+
+`GET` - [http://localhost:8080/internal/api/v1/product-metadata](http://localhost:8080/external/api/v1/products?shopperId=S-1000)
+
+`GET` - [http://localhost:8080/external/api/v1/products?shopperId=S-1000&category=Books&brand=BrandH&limit=3000](http://localhost:8080/external/api/v1/products?shopperId=S-1000&category=Books&brand=BrandH&limit=3000)
+
+Response Body
+```application/json
+[
+{
+    "productId": "BB-2144746855",
+    "category": "Babies",
+    "brand": "Babyom"
+},
+...
+]
+```
+##### Import API collection at `src/main/resources/postman` to try with Postman 
+
+
 <!-- LICENSE -->
 <!-- ## License
 
