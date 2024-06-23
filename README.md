@@ -58,7 +58,8 @@ git clone https://github.com/thilina999/personalized-data-core.git
 Open the project in IntelliJ(or any other IDEA), which will automatically build it
 
 ### Run the project
-Run the 'PersonalizedDataCoreApp' class to run the application
+Open `application.properties` file. Update valid database connection details and make sure `spring.jpa.hibernate.ddl-auto` is set to `create` when running the application for the first time. 
+Run the `PersonalizedDataCoreApp` class to run the application. This will start the application and create the required entities in the database.
 
 ## Rest API Endpoints
 
@@ -97,6 +98,10 @@ Request body
 `GET` - [http://localhost:8080/external/api/v1/products?shopperId=S-1000](http://localhost:8080/external/api/v1/products?shopperId=S-1000)
 
 `GET` - [http://localhost:8080/external/api/v1/products?shopperId=S-1000&category=Books&brand=BrandH&limit=3000](http://localhost:8080/external/api/v1/products?shopperId=S-1000&category=Books&brand=BrandH&limit=3000)
+
+Request Header
+
+`Authorization: Basic (Username: actuator, Password: !data2024)`
 
 Response Body
 ```application/json
