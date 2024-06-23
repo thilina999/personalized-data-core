@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">Personalized Data Core v0.1</h1>
+  <h1 align="center">Personalized Data Core v1.0</h1>
 
 This is a spring boot application for a personalized data REST API service that provides shoppers personalized
 information to eCommerce servers.
@@ -77,7 +77,7 @@ Request body
 
 #### Add Product Metadata
 
-`POST` - [http://localhost:8080/internal/api/v1/product-metadata](http://localhost:8080/internal/api/v1/shopper-products)
+`POST` - [http://localhost:8080/internal/api/v1/shopper-products](http://localhost:8080/internal/api/v1/shopper-products)
 
 Request body
 ```application/json
@@ -94,7 +94,7 @@ Request body
 
 #### Add Product Metadata
 
-`GET` - [http://localhost:8080/internal/api/v1/product-metadata](http://localhost:8080/external/api/v1/products?shopperId=S-1000)
+`GET` - [http://localhost:8080/external/api/v1/products?shopperId=S-1000](http://localhost:8080/external/api/v1/products?shopperId=S-1000)
 
 `GET` - [http://localhost:8080/external/api/v1/products?shopperId=S-1000&category=Books&brand=BrandH&limit=3000](http://localhost:8080/external/api/v1/products?shopperId=S-1000&category=Books&brand=BrandH&limit=3000)
 
