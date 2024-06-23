@@ -22,7 +22,7 @@ public class ProductMetadata {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
     @NotNull
     @NotEmpty
     @Column(name = "product_id", unique = true, nullable = false)

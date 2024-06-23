@@ -47,6 +47,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-[Thilina Dissanayake](https://www.linkedin.com/in/thilina-dissanayake/)
+[Thilina Dissanayake](mailto:thilinad.contact@gmail.com)
 
 Link: [https://github.com/thilina999/personalized-data-core](https://github.com/thilina999/personalized-data-core)
